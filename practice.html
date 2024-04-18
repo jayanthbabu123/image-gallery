@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid with Pinch Zoom</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+      }
+      #grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform-origin: 0 0; /* Zoom relative to the top left corner */
+        transition: transform 0.3s ease-out;
+        margin: 20px;
+        cursor: pointer; /* Indicates the grid can be interacted with */
+      }
+      .image-container {
+        width: 25%; /* You can adjust this for responsiveness */
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      h3 {
+        text-align: center;
+        font-size: 16px;
+      }
+      /* Media queries for responsive adjustments */
+      @media (max-width: 800px) {
+        .image-container {
+          width: 50%;
+        }
+      }
+      @media (max-width: 500px) {
+        .image-container {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grid">
+      <div class="image-container">
+        <img
+          src="man-with-beard-1.webp"
+          alt="Placeholder Image"
+          loading="lazy"
+        />
+        <h3>Image Title 1</h3>
+      </div>
+      <div class="image-container">
+        <img src="man-image-2.jpg" alt="Placeholder Image" loading="lazy" />
+        <h3>Image Title 2</h3>
+      </div>
+      <div class="image-container">
+        <img src="nature-image-3.jpg" alt="Placeholder Image" loading="lazy" />
+        <h3>Image Title 3</h3>
+      </div>
+      <div class="image-container">
+        <img src="green-image-4.jpg" alt="Placeholder Image" loading="lazy" />
+        <h3>Image Title 4</h3>
+      </div>
+      <div class="image-container">
+        <img
+          src="nature-green-image-5.jpg"
+          alt="Placeholder Image"
+          loading="lazy"
+        />
+        <h3>Image Title 5</h3>
+      </div>
+      <div class="image-container">
+        <img src="leafs-image-6.jpg" alt="Placeholder Image" loading="lazy" />
+        <h3>Image Title 6</h3>
+      </div>
+      <div class="image-container">
+        <img
+          src="mountains-image-7.jpg"
+          alt="Placeholder Image"
+          loading="lazy"
+        />
+        <h3>Image Title 7</h3>
+      </div>
+      <div class="image-container">
+        <img
+          src="greenary-image-8.jpg"
+          alt="Placeholder Image"
+          loading="lazy"
+        />
+        <h3>Image Title 8</h3>
+      </div>
+    </div>
+
+    <!-- <script src="https://hammerjs.github.io/dist/hammer.min.js"></script> -->
+    <!-- <script>
+      const grid = document.getElementById("grid");
+      const manager = new Hammer.Manager(grid);
+      const Pinch = new Hammer.Pinch();
+      const Pan = new Hammer.Pan();
+
+      // Enable both pinch and pan
+      manager.add(Pinch);
+      manager.add(Pan);
+
+      let lastScale = 1;
+      let scale = 1;
+      let lastPosX = grid.offsetLeft;
+      let lastPosY = grid.offsetTop;
+      let posX = 0;
+      let posY = 0;
+
+      manager.on("pinchstart panstart", function (e) {
+        lastPosX = posX;
+        lastPosY = posY;
+        lastScale = scale;
+      });
+
+      manager.on("pinchmove", function (e) {
+        // Calculate the new scale
+        scale = Math.max(1, lastScale * e.scale);
+
+        // Calculate position adjustments to keep the pinch point stationary
+        posX =
+          lastPosX + (e.center.x - grid.offsetLeft - lastPosX) * (1 - e.scale);
+        posY =
+          lastPosY + (e.center.y - grid.offsetTop - lastPosY) * (1 - e.scale);
+
+        updateTransform();
+      });
+
+      manager.on("panmove", function (e) {
+        // Only allow panning if the grid is zoomed in
+        if (scale !== 1) {
+          posX = lastPosX + e.deltaX;
+          posY = lastPosY + e.deltaY;
+          updateTransform();
+        }
+      });
+
+      manager.on("pinchend panend", function (e) {
+        // Limit zoom out
+        if (scale < 1) {
+          scale = 1;
+          resetTransform(); // Reset to initial position if zoomed out too much
+        }
+      });
+
+      function updateTransform() {
+        grid.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+      }
+
+      function resetTransform() {
+        posX = 0;
+        posY = 0;
+        updateTransform();
+      }
+    </script> -->
+
+  </body>
+</html>

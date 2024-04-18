@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html class="no-js  page-1 app-PINCH-AND-ZOOM" lang="en" >
+<head>
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <title>Pinch and Zoom with Hammer.js</title>
+  <base href="/pls/apex/" />
+<link rel="stylesheet" href="https://static.oracle.com/cdn/apex/23.2.4/app_ui/css/Core.min.css?v=23.2.4" type="text/css" />
+<link rel="stylesheet" href="https://static.oracle.com/cdn/apex/23.2.4/app_ui/css/Theme-Standard.min.css?v=23.2.4" type="text/css" />
+
+  <link rel="stylesheet" href="https://static.oracle.com/cdn/apex/23.2.4/libraries/font-apex/2.2.1/css/font-apex.min.css?v=23.2.4" type="text/css" />
+<link rel="stylesheet" href="https://static.oracle.com/cdn/apex/23.2.4/themes/theme_42/1.6/css/Core.min.css?v=23.2.4" type="text/css" />
+
+  
+  <link rel="stylesheet" href="https://static.oracle.com/cdn/apex/23.2.4/themes/theme_42/1.6/css/Vita.min.css?v=23.2.4" type="text/css" />
+
+  <link rel="stylesheet" href="r/vmorneau/121963/files/static/v3/app-icon.css?version=Release%201.0" type="text/css" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css" type="text/css" />
+<style type="text/css">
+.t-Header-branding, .t-HeroRegion-icon {
+    background: radial-gradient(circle at 100% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.t-Body-contentInner {
+    padding: 0;
+}
+
+.js-resize-sensor, .t-CardsRegion, .a-CardView-media, .a-TMV-w-scroll {
+   overflow: visible!important;
+}
+</style>
+
+  <link rel="icon" href="https://static.oracle.com/cdn/apex/23.2.4/favicon.ico" /><link rel="apple-touch-icon" href="https://static.oracle.com/cdn/apex/23.2.4/favicon-180x180.png" />
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><meta http-equiv="Cache-Control" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script >bazadebezolkohpepadr="1260747458"</script><script type="text/javascript" src="https://apex.oracle.com/akam/13/4b2578a4"  defer></script></head>
+<body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions no-anim   apex-side-nav apex-icons-fontapex apex-theme-vita"   id="t_PageBody">
+<a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
+<form role="none" action="wwv_flow.accept?p_context=pinch-and-zoom/home/13557830230249" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate  autocomplete="off">
+<input type="hidden" name="p_flow_id" value="121963" id="pFlowId" /><input type="hidden" name="p_flow_step_id" value="1" id="pFlowStepId" /><input type="hidden" name="p_instance" value="13557830230249" id="pInstance" /><input type="hidden" name="p_page_submission_id" value="157814837412043935139801633429081053530" id="pPageSubmissionId" /><input type="hidden" name="p_request" value="" id="pRequest" /><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit" /><input type="hidden" value="pinch-and-zoom&#x2F;home&#x2F;13557830230249" id="pContext" /><input type="hidden" value="157814837412043935139801633429081053530" id="pSalt" />
+<header class="t-Header" id="t_Header" role="banner">
+  
+  <div class="t-Header-branding">
+    <div class="t-Header-controls">
+      <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Expand / Collapse Navigation" title="Expand / Collapse Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+    </div>
+    <div class="t-Header-logo">
+      <a href="&#x2F;pls&#x2F;apex&#x2F;r&#x2F;vmorneau&#x2F;pinch-and-zoom&#x2F;home?session=13557830230249" class="t-Header-logo-link"><span class="apex-logo-text">Pinch and Zoom</span></a>
+    </div>
+    <div class="t-Header-navBar"><ul class="t-NavigationBar " id="21768612800985250072"><li class="t-NavigationBar-item has-username">
+  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="#" title="">
+    <span class="t-Icon fa&#x20;fa-user" ></span><span class="t-Button-label">nobody</span><span class="t-Button-badge"></span>
+  </a>
+</li></ul></div>
+  </div>
+  <div class="t-Header-nav"></div>
+</header>
+<div class="t-Body">
+  <div class="t-Body-nav" id="t_Body_nav" role="navigation" aria-label="Pinch&#x20;and&#x20;Zoom">
+<div class="t-TreeNav js-defaultCollapsed js-navCollapsed--hidden t-TreeNav--styleA" id="t_TreeNav" data-id="1_tree" aria-label="Pinch&#x20;and&#x20;Zoom"><ul style="display:none"><li data-current="true" data-id="" data-disabled="" data-icon="fa&#x20;fa-number-1" data-shortcut=""><a href="/pls/apex/r/vmorneau/pinch-and-zoom/home?session=13557830230249" title="" target="">with Hammer.js</a></li><li data-id="" data-disabled="" data-icon="fa&#x20;fa-number-2" data-shortcut=""><a href="/pls/apex/r/vmorneau/pinch-and-zoom/pinch-and-zoom-js?session=13557830230249" title="" target="">with native JavaScript</a></li></ul></div></div>
+  <div class="t-Body-main">
+    <div class="t-Body-title" id="t_Body_title"><div class="t-HeroRegion t-HeroRegion--hideIcon" id="R21768623967867250116" >
+  <div class="t-HeroRegion-wrap">
+    <div class="t-HeroRegion-col t-HeroRegion-col--left"><span class="t-HeroRegion-icon t-Icon "></span></div>
+    <div class="t-HeroRegion-col t-HeroRegion-col--content">
+      <h1 class="t-HeroRegion-title">Pinch and Zoom with Hammer.js</h1>
+      Pinch the images below on a mobile device to see the effect.
+    </div>
+    <div class="t-HeroRegion-col t-HeroRegion-col--right"><div class="t-HeroRegion-form"></div><div class="t-HeroRegion-buttons"></div></div>
+  </div>
+</div></div>
+    <div class="t-Body-content" id="t_Body_content">
+      <main id="main" class="t-Body-mainContent">
+        <span id="APEX_SUCCESS_MESSAGE" data-template-id="21768091776134249962_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="21768091776134249962_E" class="apex-page-error u-hidden"></span>
+        <div class="t-Body-fullContent"></div>
+        <div class="t-Body-contentInner"><div class="container">
+<div class="row">
+<div class="col col-12 apex-col-auto" ><div class="t-Region t-Region--hideShow is-collapsed t-Region--noBorder t-Region--scrollBody margin-top-md" id="R21843968691741113434" >
+ <div class="t-Region-header">
+  <div class="t-Region-headerItems  t-Region-headerItems--controls"><button class="t-Button t-Button--icon t-Button--hideShow" type="button"></button></div>
+  <div class="t-Region-headerItems t-Region-headerItems--title">
+    <h2 class="t-Region-title">Code</h2>
+  </div>
+  <div class="t-Region-headerItems t-Region-headerItems--buttons"></div>
+ </div>
+ <div class="t-Region-bodyWrap">
+   <div class="t-Region-buttons t-Region-buttons--top">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+   <div class="t-Region-body">
+     
+     
+     <div class="container">
+<div class="row">
+<div class="col col-12 apex-col-auto" ><div class="t-Region t-Region--hideShow is-collapsed t-Region--scrollBody" id="R21843968762785113435" >
+ <div class="t-Region-header">
+  <div class="t-Region-headerItems  t-Region-headerItems--controls"><button class="t-Button t-Button--icon t-Button--hideShow" type="button"></button></div>
+  <div class="t-Region-headerItems t-Region-headerItems--title">
+    <h2 class="t-Region-title">Function and Global Variable Declaration</h2>
+  </div>
+  <div class="t-Region-headerItems t-Region-headerItems--buttons"></div>
+ </div>
+ <div class="t-Region-bodyWrap">
+   <div class="t-Region-buttons t-Region-buttons--top">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+   <div class="t-Region-body">
+     
+     <pre><code class="language-js">
+const pinchZoom = (imageElement) => {
+  const minScale = 1;
+  const maxScale = 4;
+
+  const imageElementWidth = imageElement.offsetWidth;
+  const imageElementHeight = imageElement.offsetHeight;
+
+  let imageElementScale = 1;
+
+  let rangeMaxX = 0;
+  let rangeMinX = 0;
+
+  let rangeMaxY = 0;
+  let rangeMinY = 0;
+
+  const updateRange = () => {
+    const rangeX = Math.max(0, Math.round(imageElementWidth * imageElementScale) - imageElementWidth);
+    const rangeY = Math.max(0, Math.round(imageElementHeight * imageElementScale) - imageElementHeight);
+
+    rangeMaxX = Math.round(rangeX / 2);
+    rangeMinX = Math.round(0 - rangeMaxX);
+
+    rangeMaxY = Math.round(rangeY / 2);
+    rangeMinY = Math.round(0 - rangeMaxY);
+  };
+
+  const updateImage = (deltaX, deltaY) => {
+    const imageElementCurrentX = Math.min(Math.max(rangeMinX, deltaX), rangeMaxX) * 2;
+    const imageElementCurrentY = Math.min(Math.max(rangeMinY, deltaY), rangeMaxY) * 2;
+
+    const transform = `translate3d(${imageElementCurrentX}px, ${imageElementCurrentY}px, 0) scale(${imageElementScale})`;
+    imageElement.style.transform = transform;
+    imageElement.style.WebkitTransform = transform;
+    imageElement.style.zIndex = "9999";
+  };
+
+  const resetImage = () => {
+    imageElement.style.transform = "";
+    imageElement.style.WebkitTransform = "";
+    imageElement.style.zIndex = "";
+  };
+
+  imageElement.parentNode.style.overflow = 'visible';
+  imageElement.classList.add('pz-Image');
+
+  const hammertime = new Hammer.Manager(imageElement, {
+    touchAction: "auto",
+    recognizers: [
+      [Hammer.Pinch, { enable: true }]
+    ]
+  });
+
+  hammertime.on('pinchstart', event => {
+    console.log('pinchstart', event);
+  });
+
+  hammertime.on('pinchmove', event => {
+    // console.log('pinchmove', event);
+    imageElementScale = Math.min(Math.max(minScale, event.scale), maxScale);
+    updateRange();
+    updateImage(event.deltaX, event.deltaY);
+  });
+
+  hammertime.on('pinchend', event => {
+    console.log('pinchend', event);
+    resetImage();
+  });
+}
+</code></pre>
+     
+     
+   </div>
+   <div class="t-Region-buttons t-Region-buttons--bottom">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+ </div>
+</div></div>
+</div><div class="row">
+<div class="col col-12 apex-col-auto" ><div class="t-Region t-Region--hideShow is-collapsed t-Region--scrollBody" id="R21843968812383113436" >
+ <div class="t-Region-header">
+  <div class="t-Region-headerItems  t-Region-headerItems--controls"><button class="t-Button t-Button--icon t-Button--hideShow" type="button"></button></div>
+  <div class="t-Region-headerItems t-Region-headerItems--title">
+    <h2 class="t-Region-title">Dynamic action after refresh</h2>
+  </div>
+  <div class="t-Region-headerItems t-Region-headerItems--buttons"></div>
+ </div>
+ <div class="t-Region-bodyWrap">
+   <div class="t-Region-buttons t-Region-buttons--top">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+   <div class="t-Region-body">
+     
+     <pre><code class="language-js">
+document.querySelectorAll(".pz-Media img:not(.pz-Image)").forEach(element => {
+    pinchZoom(element);
+});
+</code></pre>
+     
+     
+   </div>
+   <div class="t-Region-buttons t-Region-buttons--bottom">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+ </div>
+</div></div>
+</div>
+</div>
+     
+   </div>
+   <div class="t-Region-buttons t-Region-buttons--bottom">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+ </div>
+</div></div>
+</div><div class="row">
+<div class="col col-12 apex-col-auto" ><div class="t-CardsRegion u-colors" id="R21843968041330113428" >
+  <h2 class="u-VisuallyHidden" id="R21843968041330113428_heading">Products</h2>
+  <div id="R21843968041330113428_Cards" class="a-TMV--cards">
+<ul class="a-CardView-items a-CardView-items--grid is-placeholder" aria-hidden="true"><li class="a-CardView-item">
+<div class="a-CardView has-title has-media has-media--body has-media--cover">
+<div class="a-CardView-media a-CardView-media--body"></div>
+<div class="a-CardView-header">
+<div class="a-CardView-headerBody">
+<h3 class="a-CardView-title"></h3>
+<h4 class="a-CardView-subTitle"></h4>
+</div>
+</div>
+</div>
+</li>
+<li class="a-CardView-item">
+<div class="a-CardView has-title has-media has-media--body has-media--cover">
+<div class="a-CardView-media a-CardView-media--body"></div>
+<div class="a-CardView-header">
+<div class="a-CardView-headerBody">
+<h3 class="a-CardView-title"></h3>
+<h4 class="a-CardView-subTitle"></h4>
+</div>
+</div>
+</div>
+</li>
+<li class="a-CardView-item">
+<div class="a-CardView has-title has-media has-media--body has-media--cover">
+<div class="a-CardView-media a-CardView-media--body"></div>
+<div class="a-CardView-header">
+<div class="a-CardView-headerBody">
+<h3 class="a-CardView-title"></h3>
+<h4 class="a-CardView-subTitle"></h4>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<script type="text/javascript">
+var gCard21843968041330113428data = {
+"values":[
+[
+"6"
+,"Mug"
+,"https:\/\/images.unsplash.com\/photo-1608085022020-3e5ee70c4e42?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"7"
+,"Leaf"
+,"https:\/\/images.unsplash.com\/photo-1607982834394-59d6b01f8348?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"8"
+,"Book"
+,"https:\/\/images.unsplash.com\/photo-1607556772227-fe3868023d27?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"9"
+,"Mushrooms"
+,"https:\/\/images.unsplash.com\/photo-1606791489366-a52d9d13f73f?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"10"
+,"Dessert"
+,"https:\/\/images.unsplash.com\/photo-1608894109526-ea487bf2c02c?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"1"
+,"Dance"
+,"https:\/\/images.unsplash.com\/photo-1608371406034-beabe217fed1?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"2"
+,"Winter"
+,"https:\/\/images.unsplash.com\/photo-1607792683200-a2b38a263427?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"3"
+,"Beach"
+,"https:\/\/images.unsplash.com\/photo-1608349119164-06d003d775e9?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"4"
+,"Bike"
+,"https:\/\/images.unsplash.com\/photo-1606775613579-aeb6b7217a5e?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+,[
+"5"
+,"Forest"
+,"https:\/\/images.unsplash.com\/photo-1607977323069-3accb593b187?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max"
+,"N"
+,"N"
+,"N"
+]
+]
+,"firstRow":1
+,"moreData":false
+}
+;
+</script>
+
+</div></div>
+</div>
+</div></div>
+      </main>
+      <footer class="t-Footer" role="contentinfo">
+        <div class="t-Footer-body">
+          <div class="t-Footer-content"></div>
+          <div class="t-Footer-apex">
+            <div class="t-Footer-version">Release 1.0</div>
+            <div class="t-Footer-customize"></div>
+            
+          </div>
+        </div>
+        <div class="t-Footer-top">
+          <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton"><span class="a-Icon icon-up-chevron"></span></a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+<div class="t-Body-inlineDialogs"></div><input type="hidden" id="pPageFormRegionChecksums" value="&#x5B;&#x5D;">
+<input type="hidden" id="pPageItemsRowVersion" value="" /><input type="hidden" id="pPageItemsProtected" value="&#x2F;vfiCh-182lIbgvLe_cG8-DIZF2onsteQqht9djaPskRQkfGhbPt2PN9B8zC_3joEUBdGOHajvfZW27DHIwO_vw" /></form>
+
+
+<script>
+var apex_img_dir = "https:\u002F\u002Fstatic.oracle.com\u002Fcdn\u002Fapex\u002F23.2.4\u002F";
+var apex = {env: {APP_USER: "nobody",APP_ID: "121963",APP_PAGE_ID: "1",APP_SESSION: "13557830230249",APP_FILES: "r\u002Fvmorneau\u002F121963\u002Ffiles\u002Fstatic\u002Fv3\u002F",WORKSPACE_FILES: "r\u002Fvmorneau\u002Ffiles\u002Fstatic\u002Fv80\u002F",APEX_VERSION: "23.2.4",APEX_BASE_VERSION: "23.2"},
+libVersions:{ckeditor5:"36.0.0",cropperJs:"1.5.13",domPurify:"3.0.5",fullcalendar:"6.1.8",hammer:"2.0.8",jquery:"3.6.4",jqueryUi:"1.13.2",maplibre:"2.4.0",markedJs:"5.1.2",prismJs:"1.29.0",oraclejet:"15.0.7",tinymce:"6.8.2",turndown:"7.1.1",monacoEditor:"0.32.1",lessJs:"4.1.3"}};
+</script>
+<script src="https://static.oracle.com/cdn/apex/23.2.4/libraries/apex/minified/desktop_all.min.js?v=23.2.4"></script>
+<script src="wwv_flow.js_messages?p_app_id=121963&p_lang=en&p_version=23.2.4-15392508229398"></script>
+
+<script type="text/javascript">
+apex.da.initDaEventList = function(){
+apex.da.gEventList = [
+{"triggeringElementType":"REGION","triggeringRegionId":"R21843968041330113428","bindType":"bind","executionType":"IMMEDIATE","bindEventType":"apexafterrefresh","anyActionsFireOnInit":true,actionList:[{"eventResult":true,"executeOnPageInit":true,"stopExecutionOnError":true,javascriptFunction:function (){ document.querySelectorAll(".pz-Media img:not(.pz-Image)").forEach(element => {
+    pinchZoom(element);
+});
+},"action":"NATIVE_JAVASCRIPT_CODE"}]}];
+}
+</script>
+
+<script src="https://static.oracle.com/cdn/apex/23.2.4/libraries/apex/minified/widget.stickyWidget.min.js?v=23.2.4"></script>
+<script src="https://static.oracle.com/cdn/apex/23.2.4/themes/theme_42/1.6/js/theme42.min.js?v=23.2.4"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js"></script>
+<script type="text/javascript">
+const pinchZoom = (imageElement) => {
+  const minScale = 1;
+  const maxScale = 4;
+
+  const imageElementWidth = imageElement.offsetWidth;
+  const imageElementHeight = imageElement.offsetHeight;
+
+  let imageElementScale = 1;
+
+  let rangeMaxX = 0;
+  let rangeMinX = 0;
+
+  let rangeMaxY = 0;
+  let rangeMinY = 0;
+
+  const clamp = (value, min, max) => {
+    return ;
+  };
+
+  const clampScale = (scale) => {
+    return ;
+  };
+
+  const updateRange = () => {
+    const rangeX = Math.max(0, Math.round(imageElementWidth * imageElementScale) - imageElementWidth);
+    const rangeY = Math.max(0, Math.round(imageElementHeight * imageElementScale) - imageElementHeight);
+
+    rangeMaxX = Math.round(rangeX / 2);
+    rangeMinX = Math.round(0 - rangeMaxX);
+
+    rangeMaxY = Math.round(rangeY / 2);
+    rangeMinY = Math.round(0 - rangeMaxY);
+  };
+
+  const updateImage = (deltaX, deltaY) => {
+    const imageElementCurrentX = Math.min(Math.max(rangeMinX, deltaX), rangeMaxX) * 2;
+    const imageElementCurrentY = Math.min(Math.max(rangeMinY, deltaY), rangeMaxY) * 2;
+
+    const transform = `translate3d(${imageElementCurrentX}px, ${imageElementCurrentY}px, 0) scale(${imageElementScale})`;
+    imageElement.style.transform = transform;
+    imageElement.style.WebkitTransform = transform;
+    imageElement.style.zIndex = "9999";
+  };
+
+  const resetImage = () => {
+    imageElement.style.transform = "";
+    imageElement.style.WebkitTransform = "";
+    imageElement.style.zIndex = "";
+  };
+
+  imageElement.parentNode.style.overflow = 'visible';
+  imageElement.classList.add('pz-Image');
+
+  const hammertime = new Hammer.Manager(imageElement, {
+    touchAction: "auto",
+    recognizers: [
+      [Hammer.Pinch, { enable: true }]
+    ]
+  });
+
+  hammertime.on('pinchstart', event => {
+    console.log('pinchstart', event);
+  });
+
+  hammertime.on('pinchmove', event => {
+    // console.log('pinchmove', event);
+    imageElementScale = Math.min(Math.max(minScale, event.scale), maxScale);
+    updateRange();
+    updateImage(event.deltaX, event.deltaY);
+  });
+
+  hammertime.on('pinchend', event => {
+    console.log('pinchend', event);
+    resetImage();
+  });
+}
+</script>  
+
+
+<script src="https://static.oracle.com/cdn/apex/23.2.4/libraries/apex/minified/widget.treeView.min.js?v=23.2.4"></script>
+<script src="https://static.oracle.com/cdn/apex/23.2.4/libraries/apex/minified/modelViewBase.min.js?v=23.2.4"></script>
+<script src="https://static.oracle.com/cdn/apex/23.2.4/libraries/apex/minified/widget.templateReport.min.js?v=23.2.4"></script>
+
+
+
+<script type="text/javascript">
+apex.jQuery( function() {
+apex.page.init( this, function() {
+try {
+(function(){apex.jQuery('body').addClass('t-PageBody--leftNav');})();
+(function(){apex.util.defineTemplates([{"name":"APEX_CARDS_BEFORE","template":"\u003Cul class=\u0022a-CardView-items #CARD_LAYOUT# #COMPONENT_CLASSES#\u0022\u003E\u000A","args":[{"name":"CARD_LAYOUT","escape":"ATTR"},{"name":"COMPONENT_CLASSES","escape":"ATTR"}]},{"name":"APEX_CARDS_CARD_21843968041330113428","template":"\u003Cli class=\u0022a-CardView-item \u0026APEX$ROW_STATE_CLASSES.\u0022 data-id=\u0022\u0026APEX$ROW_ID.\u0022 data-rownum=\u0022\u0026APEX$ROW_INDEX.\u0022\u003E\u000A\u003Cdiv class=\u0022a-CardView{if ?TITLE\u002F} has-title{endif\u002F}{if ?MEDIA\u002F} has-media has-media--body has-media--cover{endif\u002F}{if APEX$ACTION_EXISTS\u002F} has-actions{endif\u002F}{if APEX$FULL_ACTION_EXISTS\u002F} has-actions--full{endif\u002F} #CARD_CLASSES#\u0022\u003E\u000A{if ?MEDIA\u002F}\u000A\u003Cdiv class=\u0022a-CardView-media #MEDIA_POSITION# #MEDIA_APPEARANCE# #MEDIA_SIZING# #MEDIA_CLASSES#\u0022\u003E\u000A\u003Cimg class=\u0022a-CardView-mediaImg\u0022 src=\u0022#MEDIA#\u0022 alt=\u0022\u0022 loading=\u0022lazy\u0022 \u002F\u003E\u003C\u002Fdiv\u003E\u000A{endif\u002F}\u000A\u003Cdiv class=\u0022a-CardView-header\u0022\u003E\u000A\u003Cdiv class=\u0022a-CardView-headerBody\u0022\u003E\u000A{if ?TITLE\u002F}\u000A\u003Ch3 class=\u0022a-CardView-title #TITLE_CLASSES#\u0022\u003E#TITLE#\u003C\u002Fh3\u003E\u000A{endif\u002F}\u000A{if ?SUB_TITLE\u002F}\u000A\u003Ch4 class=\u0022a-CardView-subTitle #SUB_TITLE_CLASSES#\u0022\u003E#SUB_TITLE#\u003C\u002Fh4\u003E\u000A{endif\u002F}\u000A\u003C\u002Fdiv\u003E\u000A\u003C\u002Fdiv\u003E\u000A\u003C\u002Fdiv\u003E\u000A\u003C\u002Fli\u003E\u000A","args":[{"name":"CARD_CLASSES","escape":"ATTR"},{"name":"MEDIA_POSITION","escape":"ATTR"},{"name":"MEDIA_APPEARANCE","escape":"ATTR"},{"name":"MEDIA_SIZING","escape":"ATTR"},{"name":"MEDIA_CLASSES","escape":"ATTR"},{"name":"MEDIA","escape":"ATTR"},{"name":"TITLE_CLASSES","escape":"ATTR"},{"name":"TITLE","escape":"HTML"},{"name":"SUB_TITLE_CLASSES","escape":"ATTR"},{"name":"SUB_TITLE","escape":"HTML"}]},{"name":"APEX_CARDS_AFTER","template":"\u003C\u002Ful\u003E"}]);apex.widget.templateReportRegionInit({"regionId":"21843968041330113428","regionStaticId":"R21843968041330113428","regionType":"Cards","ajaxIdentifier":"UkVHSU9OIFRZUEV-fjIxODQzOTY4MDQxMzMwMTEzNDI4\u002FPUcoScuT7hTX4AHxKcnQTFsApkMUHpFlB3_jIoeEe9xUrN7TuRKTY94a_5xjBuC-Ev7JAdZnst-ZbUVT_kwOOg","modelName":"R21843968041330113428","modelOptions":{"regionId":21843968041330113428,"paginationType":"progressive","pageSize":100,"identityField":"PRODUCT_ID"},"pagination":{"scroll":true,"showRange":false,"firstAndLastButtons":false,"hideSinglePage":true},"footer":false,"hideEmptyFooter":true,"hasSize":false,"beforeTemplate":"{with\u002F}\u000ACARD_LAYOUT:=a-CardView-items--grid\u000ACOMPONENT_CLASSES:=test1\u000A{apply APEX_CARDS_BEFORE\u002F}","recordTemplate":"{with\u002F}\u000ACARD_CLASSES:=test2\u000AMEDIA_POSITION:=a-CardView-media--body\u000AMEDIA_APPEARANCE:=\u000AMEDIA_SIZING:=a-CardView-media--cover\u000AMEDIA_CLASSES:=pz-Media\u000AMEDIA:=\u0026\u0022PRODUCT_DESCRIPTION\u0022!RAW.\u000ATITLE_CLASSES:=\u000ATITLE:=\u0026\u0022PRODUCT_NAME\u0022!RAW.\u000ASUB_TITLE_CLASSES:=\u000ASUB_TITLE:=\u000A{apply APEX_CARDS_CARD_21843968041330113428\u002F}","afterTemplate":"{with\u002F}\u000A{apply APEX_CARDS_AFTER\u002F}","columns":[{"PRODUCT_ID":{"index":0},"PRODUCT_NAME":{"index":1},"PRODUCT_DESCRIPTION":{"index":2},"APEX$BUTTON_ACTION_EXISTS":{"index":3},"APEX$FULL_ACTION_EXISTS":{"index":4},"APEX$ACTION_EXISTS":{"index":5}}]},gCard21843968041330113428data);})();
+} catch(e) {apex.debug.error(e)};
+apex.item.waitForDelayLoadItems().done(function() {
+try {
+(function(){apex.da.initDaEventList();
+apex.da.init();})();
+apex.theme42.initializePage.noSideCol();
+
+apex.page.warnOnUnsavedChanges();
+} finally {
+apex.event.trigger(apex.gPageContext$,'apexreadyend');
+};
+});
+});
+});apex.pwa.cleanup( { serviceWorkerPath:'\u002Fpls\u002Fapex\u002Fr\u002Fvmorneau\u002Fpinch-and-zoom\u002Fsw.js?v=23.2.4-15392508229398\u0026lang=en' } );
+</script>
+
+<noscript><img src="https://apex.oracle.com/akam/13/pixel_4b2578a4?a=dD1jNTFlYjM2NjExZjEwNmIwYzJmNDRjZjE5ZjYxOTBhNWFiODUwYzM0JmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>
+</html>

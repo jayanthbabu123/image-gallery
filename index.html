@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Image Grid Zoom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600&family=Lato:ital,wght@0,100;1,100;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sree+Krushnadevaraya&display=swap" rel="stylesheet">
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Poppins", sans-serif;
         background: #f4f4f4;
         margin: 0;
         padding: 20px;
@@ -15,7 +18,7 @@
       #grid {
         column-count: 4;
         column-gap: 10px;
-        transform-origin: center; /* Ensure zoom centers */
+        transform-origin: center;
       }
       .image-container {
         background: white;
@@ -30,9 +33,11 @@
         display: block;
       }
       h3 {
-        margin-top: 0.5em;
-        font-size: 16px;
+        margin-top: 1em;
+        font-size: 14px;
         text-align: center;
+        font-weight: 600;
+        margin-bottom: 0.4em;
       }
       @media (max-width: 768px) {
         #grid {
@@ -44,94 +49,68 @@
   <body>
     <div id="viewport">
       <div id="grid">
-        <div class="image-container">
-          <img
-            src="man-with-beard-1.webp"
-            alt="Placeholder Image"
-            loading="lazy"
-          />
-          <h3>Image Title 1</h3>
-        </div>
-        <div class="image-container">
-          <img src="man-image-2.jpg" alt="Placeholder Image" loading="lazy" />
-          <h3>Image Title 2</h3>
-        </div>
-        <div class="image-container">
-          <img
-            src="nature-image-3.jpg"
-            alt="Placeholder Image"
-            loading="lazy"
-          />
-          <h3>Image Title 3</h3>
-        </div>
-        <div class="image-container">
-          <img src="green-image-4.jpg" alt="Placeholder Image" loading="lazy" />
-          <h3>Image Title 4</h3>
-        </div>
-        <div class="image-container">
-          <img
-            src="nature-green-image-5.jpg"
-            alt="Placeholder Image"
-            loading="lazy"
-          />
-          <h3>Image Title 5</h3>
-        </div>
-        <div class="image-container">
-          <img src="leafs-image-6.jpg" alt="Placeholder Image" loading="lazy" />
-          <h3>Image Title 6</h3>
-        </div>
-        <div class="image-container">
-          <img
-            src="mountains-image-7.jpg"
-            alt="Placeholder Image"
-            loading="lazy"
-          />
-          <h3>Image Title 7</h3>
-        </div>
-        <div class="image-container">
-          <img
-            src="greenary-image-8.jpg"
-            alt="Placeholder Image"
-            loading="lazy"
-          />
-          <h3>Image Title 8</h3>
-        </div>
+        <!-- Dynamic image containers will be inserted here -->
       </div>
     </div>
-    <!-- <script src="https://hammerjs.github.io/dist/hammer.min.js"></script> -->
-    <!-- <script>
-      var element = document.getElementById("grid");
-      var viewport = document.getElementById("viewport");
-      var hammertime = new Hammer(viewport, { inputClass: Hammer.TouchInput });
-      var posX = 0,
-        posY = 0,
-        scale = 1,
-        last_scale = 1,
-        last_posX = 0,
-        last_posY = 0;
 
-      hammertime.get("pinch").set({ enable: true });
-      hammertime.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+    <script>
+      // Array of objects containing image details
+      const images = [
+        {
+          src: "man-with-beard-1.webp",
+          title: "Man with Beard",
+          alt: "A thoughtful man with a beard",
+        },
+        {
+          src: "man-image-2.jpg",
+          title: "Serene Lake",
+          alt: "A serene lake view",
+        },
+        {
+          src: "nature-image-3.jpg",
+          title: "Forest Pathway",
+          alt: "A lush forest pathway",
+        },
+        {
+          src: "green-image-4.jpg",
+          title: "Green Field",
+          alt: "A vibrant green field",
+        },
+        {
+          src: "nature-green-image-5.jpg",
+          title: "Mountain Range",
+          alt: "A distant mountain range",
+        },
+        {
+          src: "leafs-image-6.jpg",
+          title: "Autumn Leaves",
+          alt: "Colorful autumn leaves",
+        },
+        {
+          src: "mountains-image-7.jpg",
+          title: "Rocky Mountains",
+          alt: "Rocky mountain peaks",
+        },
+        {
+          src: "greenary-image-8.jpg",
+          title: "Summer Greens",
+          alt: "Lush summer greenery",
+        },
+      ];
 
-      hammertime.on("pan", function (e) {
-        posX = e.deltaX + last_posX;
-        posY = e.deltaY + last_posY;
-        element.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+      // Reference to the grid element
+      const grid = document.getElementById("grid");
+
+      // Function to create and append image containers
+      images.forEach((image) => {
+        const container = document.createElement("div");
+        container.className = "image-container";
+        container.innerHTML = `
+                <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+                <h3>${image.title}</h3>
+            `;
+        grid.appendChild(container);
       });
-
-      hammertime.on("pinch", function (e) {
-        scale = Math.max(1, Math.min(last_scale * e.scale, 4)); // Allows up to 4x zoom
-        element.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
-      });
-
-      hammertime.on("panend", function (e) {
-        last_posX = posX;
-        last_posY = posY;
-      });
-
-      hammertime.on("pinchend", function (e) {
-        last_scale = scale;
-      });
-    </script> -->
+    </script>
   </body>
 </html>
